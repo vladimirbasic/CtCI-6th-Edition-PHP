@@ -1,0 +1,32 @@
+---
+- name: Update apt
+  sudo: yes
+  apt: update_cache=yes
+
+- name: Upgrade apt
+  sudo: yes
+  apt: upgrade=safe
+
+- name: Install System Packages
+  sudo: yes
+  apt: pkg={{ item.value }}
+  with_dict: system_packages
+
+- name: Set UTC timezone
+  shell: sudo ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime
+
+- shell: "grep {{ ansible_ssh_user }} /etc/passwd | cut -d ':' -f6"
+  sudo: yes
+  register: home_dir
+
+- name: Create ~/.bash_profile
+  template:
+      src=bash_profile.j2
+      dest={{ home_dir.stdout }}/.bash_profile
+      owner={{ ansible_ssh_user }} group={{ ansible_ssh_user }}
+
+- name: Create ~/.gitconfig
+  template:
+      src=gitconfig.j2
+      dest={{ home_dir.stdout }}/.gitconfig
+      owner={{ ansible_ssh_user }} group={{ ansible_ssh_user }}

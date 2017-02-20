@@ -1,0 +1,56 @@
+---
+- name: Add php 7 repo
+  apt_repository:
+    repo: 'ppa:ondrej/php'
+    state: present
+    update_cache: yes
+
+- name: Install base PHP packages
+  apt: pkg={{ item }}
+  sudo: yes
+  with_items:
+    - php7.1
+    - php7.1-common
+    - php7.1-dev
+    - php7.1-cli
+    - php7.1-curl
+    - php7.1-json
+    - php7.1-mbstring
+    - php7.1-xml
+    - php7.1-zip
+
+- name: Create php error log file
+  file:
+    path={{ php.settings.common.error_log }}
+    state=touch
+    owner=www-data
+    group=www-data
+    mode=0644
+
+- name: Download and extract xDebug
+  command: "{{ item }} chdir=/home/vagrant"
+  with_items:
+    - "wget -c http://xdebug.org/files/xdebug-2.5.0.tgz"
+    - "tar -xf xdebug-2.5.0.tgz"
+
+- name: Install xDebug
+  command: "{{ item }} chdir=/home/vagrant/xdebug-2.5.0/"
+  with_items:
+    - "phpize"
+    - "./configure"
+    - "make"
+    - "make install"
+
+- name: Enable xDebug
+  command: "{{ item }} chdir=/home/vagrant/xdebug-2.5.0/"
+  sudo: yes
+  with_items:
+    - "sh -c 'echo \"zend_extension=xdebug.so\" > /etc/php/7.1/mods-available/xdebug.ini'"
+    - "phpenmod xdebug"
+
+- name: Copy PHP settings files
+  template:
+    src=php.ini.j2
+    dest={{ item.value }}
+  sudo: yes
+  with_dict: php.settings_pathes

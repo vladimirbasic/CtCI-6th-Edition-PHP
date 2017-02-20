@@ -1,0 +1,9 @@
+---
+system_packages:
+  locate: locate
+  htop: htop
+  curl: curl
+  wget: wget
+  git: git
+  vim: vim
+  unzip: unzip

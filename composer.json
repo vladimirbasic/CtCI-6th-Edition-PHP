@@ -1,0 +1,16 @@
+{
+  "require-dev": {
+    "phpunit/phpunit": "~5.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ctci\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Ctci\\Tests\\" : "tests"
+    }
+  },
+  "minimum-stability": "stable"
+}

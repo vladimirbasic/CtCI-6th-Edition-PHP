@@ -1,0 +1,29 @@
+---
+php:
+  settings:
+    common:
+      error_log: "/var/log/php_errors.log"
+      html_errors: 'Off'
+      xdebug.remote_enable: 1
+      xdebug.idekey: "PHPSTORM"
+      xdebug.remote_autostart: 1
+      xdebug.remote_connect_back: 1
+      xdebug.remote_port: 9000
+      xdebug.remote_handler: dbgp
+    cli:
+      error_reporting: E_ALL
+      max_execution_time: 0
+      memory_limit: -1
+      disable_functions: ''
+      session.gc_probability: 0
+      opcache.enable: 0
+    apache2:
+      error_reporting: E_ALL
+      max_execution_time: 30
+      memory_limit: 256M
+      disable_functions: "pcntl_alarm,pcntl_fork,pcntl_waitpid,pcntl_wait,pcntl_wifexited,pcntl_wifstopped,pcntl_wifsignaled,pcntl_wexitstatus,pcntl_wtermsig,pcntl_wstopsig,pcntl_signal,pcntl_signal_dispatch,pcntl_get_last_error,pcntl_strerror,pcntl_sigprocmask,pcntl_sigwaitinfo,pcntl_sigtimedwait,pcntl_exec,pcntl_getpriority,pcntl_setpriority,"
+      session.gc_probability: 1
+  settings_pathes:
+    cli: /etc/php/7.1/cli/conf.d/php.ini
+    apache2: /etc/php/7.1/apache2/conf.d/php.ini
+  webserver: apache2

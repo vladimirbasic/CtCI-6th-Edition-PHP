@@ -1,0 +1,18 @@
+---
+- name: Check if Composer is already installed
+  shell: "composer --version"
+  register: composer_exists
+  ignore_errors: True
+
+- name: Download Composer
+  shell: curl -sS https://getcomposer.org/installer | php
+  when: composer_exists.stdout|int == 0
+
+- name: Install Composer
+  shell: mv composer.phar /usr/local/bin/composer
+  when: composer_exists.stdout|int == 0
+
+- name: composer install command
+  command: "composer install chdir=/var/www/CtCI-6th-Edition-PHP"
+  sudo: no
+  when: composer_exists.stdout|int == 0

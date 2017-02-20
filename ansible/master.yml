@@ -1,0 +1,9 @@
+---
+- name: Provison
+  hosts: ctci # This uses the hosts that we put into the in-memory hosts repository with the add_host module.
+  sudo: yes # On EC2 nodes, this is automatically passwordless.
+  vars:
+  roles:
+    - init
+    - php
+    - php-composer
