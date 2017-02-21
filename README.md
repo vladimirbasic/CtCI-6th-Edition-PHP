@@ -28,7 +28,7 @@ Following chapters are covered:
   3 URLify [[code](src/Chapter01_ArraysAndStrings/Question03_URLify.php) / [test](tests/Chapter01_ArraysAndStrings/Question03_URLifyTest.php)]
   > Write a method to replace all spaces in a string with '%20'. You may assume that the string has sufficient space at the end to hold the additional characters, and that you are give the 'true' length length of the string.  
   EXAMPLE  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<-   13  ->|  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<-&nbsp;&nbsp;&nbsp;13&nbsp;&nbsp;->|  
   Input: "Mr John Smith&nbsp;&nbsp;&nbsp;&nbsp;"  
   Output: "Mr%20John%20Smith"
     
