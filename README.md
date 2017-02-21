@@ -1,5 +1,7 @@
 # PHP Solutions for [Cracking The Coding Interview 6th Ed.](http://www.crackingthecodinginterview.com/) tasks
 
+[![Build Status](https://api.travis-ci.org/vladimirbasic/CtCI-6th-Edition-PHP.svg?branch=master)](https://travis-ci.org/vladimirbasic/CtCI-6th-Edition-PHP)
+
 **Recommended to have: [Vagrant](https://www.vagrantup.com/), [Ansible](https://www.ansible.com/), [VirtualBox](https://www.virtualbox.org/).**
 
 All solutions are implemented in **PHP 7** (with strict types when possible) and covered with tests with many different inputs. 
