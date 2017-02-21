@@ -13,7 +13,9 @@ All solutions are implemented in **PHP 7** (with strict types when possible) and
     $ cd /var/www/CtCI-6th-Edition-PHP/Tests
     
     $ ../vendor/bin/phpunit .
-    
+
+***
+
 Following chapters are covered:
 ### Arrays and Strings
     
