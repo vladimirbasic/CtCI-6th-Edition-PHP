@@ -1,6 +1,6 @@
 # PHP Solutions for [Cracking The Coding Interview 6th Ed.](http://www.crackingthecodinginterview.com/) tasks
 
-**Requirements: [Vagrant](https://www.vagrantup.com/), [Ansible](https://www.ansible.com/), [VirtualBox](https://www.virtualbox.org/).**
+**Recommended: [Vagrant](https://www.vagrantup.com/), [Ansible](https://www.ansible.com/), [VirtualBox](https://www.virtualbox.org/).**
 
 All solutions are implemented in **PHP 7** (with strict types when possible) and covered with tests with many different inputs. 
 
