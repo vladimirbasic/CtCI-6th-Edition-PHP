@@ -49,12 +49,7 @@ Following chapters are covered:
   pale, bae -> false
   
   6 String Compression [[code](src/Chapter01_ArraysAndStrings/Question06_StringCompression.php) / [test](tests/Chapter01_ArraysAndStrings/Question06_StringCompressionTest.php)]
-  > There are three types of edits that can be performed on strings: insert a character, remove a character, or replace a character. Given two strings, write a function to check if they are one edit (or zero edits) away.  
-  EXAMPLE  
-  pale, ple -> true  
-  pales, pale -> true  
-  pale, bale -> true  
-  pale, bae -> false
+  > Implement a method to perform basic string compression using the counts of repeated characters. For example, the string aabcccccaaa would become a2b1c5a3. If the "compressed" string would not become smaller then the original string, your method should return the original string. You can assume the string has only uppercase and lowercase letters (a - z). 
   
   7 Rotate Matrix [[code](src/Chapter01_ArraysAndStrings/Question07_RotateMatrix.php) / [test](tests/Chapter01_ArraysAndStrings/Question07_RotateMatrixTest.php)]
   > Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
